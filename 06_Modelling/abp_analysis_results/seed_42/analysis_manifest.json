@@ -1,0 +1,69 @@
+{
+  "analysis_version": "1.0",
+  "created_at_utc": "2026-11-13T07:32:54.789881+00:00",
+  "input_root": "C:\\Users\\navya\\Downloads\\CP302work\\06_Modelling\\cp302_pilot_results\\seed_42",
+  "output_root": "C:\\Users\\navya\\Downloads\\CP302work\\06_Modelling\\cp302_pilot_analysis_results\\seed_42",
+  "runs": [
+    {
+      "run_id": "overdamped_N100_T50",
+      "model": "overdamped",
+      "n_particles": 100,
+      "duration_s": 50.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "befaec96390e416a7dd35dd6e411c109f0e500cecddc0917d79ca18ed70d86a4"
+    },
+    {
+      "run_id": "inertial_N100_T50",
+      "model": "inertial",
+      "n_particles": 100,
+      "duration_s": 50.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "befaec96390e416a7dd35dd6e411c109f0e500cecddc0917d79ca18ed70d86a4"
+    },
+    {
+      "run_id": "overdamped_N400_T50",
+      "model": "overdamped",
+      "n_particles": 400,
+      "duration_s": 50.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "4cb3716cbbc9629d05499f7bb4fec1c888e617305b4b9af3d2d04a97b90ee799"
+    },
+    {
+      "run_id": "inertial_N400_T50",
+      "model": "inertial",
+      "n_particles": 400,
+      "duration_s": 50.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "4cb3716cbbc9629d05499f7bb4fec1c888e617305b4b9af3d2d04a97b90ee799"
+    },
+    {
+      "run_id": "overdamped_N100_T200",
+      "model": "overdamped",
+      "n_particles": 100,
+      "duration_s": 200.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "befaec96390e416a7dd35dd6e411c109f0e500cecddc0917d79ca18ed70d86a4"
+    },
+    {
+      "run_id": "inertial_N100_T200",
+      "model": "inertial",
+      "n_particles": 100,
+      "duration_s": 200.0,
+      "output_interval_s": 0.01,
+      "seed": 42,
+      "initial_conditions_sha256": "befaec96390e416a7dd35dd6e411c109f0e500cecddc0917d79ca18ed70d86a4"
+    }
+  ],
+  "estimators": {
+    "ensemble_msd": "mean_i |r_i(t)-r_i(0)|^2",
+    "time_averaged_msd": "mean_i,t |r_i(t+lag)-r_i(t)|^2 over all valid origins",
+    "oacf": "mean_i,t cos(theta_i(t+lag)-theta_i(t)); normalized by lag zero",
+    "displacement_vacf": "mean_i,t v_i(t) dot v_i(t+lag), v=delta_r/output_interval; normalized by lag zero",
+    "diffusion": "No coefficient is automatically fitted or reported."
+  }
+}

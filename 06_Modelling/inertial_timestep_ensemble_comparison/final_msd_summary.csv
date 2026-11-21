@@ -1,0 +1,11 @@
+timestep,run,folder,frames,final_time,final_MSD
+dt001,1,inertial_abp_cluster10_nonoverlap_results,5001,50.0,635.4791058421746
+dt001,2,inertial_abp_cluster10_seed43_dt001_results,5001,50.0,674.9007829608424
+dt001,3,inertial_abp_cluster10_seed44_dt001_results,5001,50.0,677.747559247064
+dt001,4,inertial_abp_cluster10_seed45_dt001_results,5001,50.0,631.9160376919979
+dt001,5,inertial_abp_cluster10_seed46_dt001_results,5001,50.0,701.0231070188305
+dt005,1,inertial_abp_cluster10_dt005_results,10001,50.0,616.3905520852244
+dt005,2,inertial_abp_cluster10_seed43_dt005_results,10001,50.0,626.8358696950552
+dt005,3,inertial_abp_cluster10_seed44_dt005_results,10001,50.0,653.8147185967559
+dt005,4,inertial_abp_cluster10_seed45_dt005_results,10001,50.0,707.2467292448937
+dt005,5,inertial_abp_cluster10_seed46_dt005_results,10001,50.0,661.7789716561174

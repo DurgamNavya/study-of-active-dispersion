@@ -2,87 +2,90 @@
 
 ## B.Tech Capstone Project
 
-Department: Chemical Engineering
-Institute: Indian Institute of Technology Ropar
-Project: Study of Active Dispersion
+- **Department:** Chemical Engineering
+- **Institute:** Indian Institute of Technology Ropar
+- **Project:** Study of Active Dispersion
 
 ## Project Overview
 
-This project focuses on the computational study of active dispersion of microorganisms using microscopy image analysis and active-particle modelling.
+This project investigates the motion and dispersion of microorganisms through microscopy image processing and computational active-particle modelling.
 
-The objective is to extract quantitative information about microorganism motion from microscopy image sequences and investigate how active motion contributes to dispersion and transport.
+The computational work includes image preprocessing and segmentation, supporting experimental tracking data, and simulations of Brownian, active Brownian, and inertial active-particle systems.
 
 ## Project Objectives
 
-- Process microscopy images of microorganisms.
-- Identify and isolate the experimental region.
-- Detect and segment microorganism structures from the image background.
-- Extract individual object positions and trajectories.
-- Determine velocity and orientation from tracked motion.
-- Quantify dispersion using trajectory-based analysis.
-- Study Brownian, inertial and active-particle models.
-- Compare experimentally observed motion with theoretical model predictions.
+- Process microscopy images and identify the experimental region.
+- Detect and segment microorganism structures.
+- Develop methods for extracting object positions and trajectories.
+- Study velocity, orientation, and dispersion.
+- Implement and analyse active-particle models.
+- Compare simulation behaviour with theoretical predictions and, where validated data are available, experimental observations.
 
-## Current Computational Workflow
+## Image Processing
 
-The image-processing workflow currently implemented consists of:
+The implemented image-processing workflow includes:
 
-1. Petri-dish region detection using circular region-of-interest detection.
-2. Circular masking to isolate the experimental region.
-3. Background intensity removal.
-4. Local contrast enhancement using CLAHE.
-5. Gaussian filtering for image smoothing.
-6. Black-hat enhancement for highlighting dark microorganism structures.
-7. Otsu thresholding for binary segmentation.
-8. Morphological processing and removal of small unwanted structures.
-9. Generation of preliminary segmentation masks.
+1. Petri-dish region detection and masking.
+2. Background intensity removal.
+3. Local contrast enhancement using CLAHE.
+4. Gaussian filtering.
+5. Black-hat enhancement.
+6. Otsu thresholding.
+7. Morphological processing.
+8. Generation of preliminary segmentation masks.
 
-## Current Project Status
+The current segmentation workflow has been tested on representative microscopy images. Dense central regions can cause multiple structures to become connected, so reliable individual-object separation remains a limitation.
 
-The image-processing stage has been implemented and tested on a representative microscopy frame.
+## Computational Modelling
 
-The current workflow produces:
+The `06_Modelling` directory contains:
 
-- Petri-dish ROI detection and masking.
-- Background-reduced images.
-- Contrast-enhanced images.
-- Binary segmentation.
-- Morphologically processed segmentation masks.
-- Preliminary microorganism structures.
+- Overdamped and inertial active Brownian particle simulation code.
+- Numerical methods and simulation utilities.
+- Parameter-sensitivity studies.
+- Mean-squared displacement and correlation analysis.
+- Theoretical comparisons and validation scripts.
+- Tests for the numerical core, simulation runner, and analysis pipeline.
 
-A current limitation is the dense central region of the image, where multiple microorganism structures can become connected during segmentation. Reliable separation of individual objects is therefore required before final trajectory-based analysis.
-
-## Next Steps
-
-The remaining computational workflow is:
-
-Object detection -> Tracking -> Velocity and orientation -> Dispersion analysis -> Brownian, inertial and active modelling -> Experimental-model comparison
-
-The next stage will focus on reliable individual object detection and tracking across consecutive microscopy frames.
+The modelling documentation describes the simulation assumptions, parameters, outputs, and limitations.
 
 ## Repository Structure
 
-02_Image_Processing
+| Folder | Contents |
+|---|---|
+| `01_Experimental_Data` | Supporting tracking files and a representative image; full raw image sequence is stored separately |
+| `02_Image_Processing` | Preprocessing, segmentation scripts, and selected image outputs |
+| `03_Tracking` | Reserved for validated tracking workflows and outputs |
+| `04_Velocity_Orientation` | Reserved for velocity and orientation analysis |
+| `05_Dispersion_Analysis` | Reserved for experimental dispersion analysis |
+| `06_Modelling` | Active-particle simulations, numerical methods, analysis scripts, tests, and selected results |
+| `07_AMEP` | Reserved for project-specific AMEP analysis files |
+| `08_Report_PPT` | Reserved for finalized project reports and presentation material |
 
-- Image preprocessing scripts
-- Segmentation scripts
-- ROI and masking outputs
-- Background-removal outputs
-- Contrast-enhancement outputs
-- Binary segmentation outputs
-- Morphological processing outputs
+## Experimental Data Availability
 
-The repository currently documents the implemented image-processing stage. Additional project stages will be added as they are developed and validated.
+The complete raw microscopy dataset is not included in this repository because of its size.
 
-## Data Note
+The original dataset contains 1,266 TIFF images, including one background image and 1,265 numbered experimental frames. Its approximate total size is 7.39 GB.
 
-The raw microscopy dataset is not included in this public repository. The repository contains the computational scripts and selected processing outputs used to document the image-processing workflow.
+Three smaller supporting files and a representative PNG frame are included in `01_Experimental_Data/raw_data`.
 
-## Tools
+The correspondence between supporting tracking files and the complete image sequence, along with spatial calibration and frame timing, must be established before using them for quantitative experimental validation.
+
+## Data and Results Limitations
+
+- Selected image outputs are provided to document the processing workflow.
+- Some large simulation trajectory files are excluded from the repository because of GitHub file-size limits.
+- Experimental tracking, velocity, and dispersion results should be treated as quantitative results only after the relevant calibration and data provenance have been verified.
+- Simulation assumptions and limitations are documented in `06_Modelling`.
+
+## Tools and Libraries
 
 - Python
-- OpenCV
 - NumPy
-- scikit-image
 - SciPy
-- Active-matter computational analysis tools
+- OpenCV
+- scikit-image
+- Matplotlib
+- pytest
+- Active Matter Environment Package (AMEP)

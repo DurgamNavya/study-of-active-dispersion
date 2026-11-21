@@ -1,0 +1,22 @@
+{
+  "actual_frames": 5001,
+  "actual_particle_rows": 2000400,
+  "boundary_corrections": 0,
+  "completed_steps": 10000,
+  "ended_at_utc": "2026-11-11T08:58:11.972118+00:00",
+  "errors": [],
+  "execution_status": "completed",
+  "expected_frames": 5001,
+  "expected_particle_rows": 2000400,
+  "finalization_errors": [],
+  "incomplete_run_information": null,
+  "inertial_refinements": 0,
+  "inertial_step_diagnostics_complete": true,
+  "maximum_refinement_depth": 0,
+  "non_finite_orientations_detected": false,
+  "non_finite_positions_detected": false,
+  "non_finite_velocities_detected": false,
+  "run_id": "inertial_N400_T50",
+  "started_at_utc": "2026-11-11T07:44:17.886149+00:00",
+  "unresolved_boundary_crossing": false
+}

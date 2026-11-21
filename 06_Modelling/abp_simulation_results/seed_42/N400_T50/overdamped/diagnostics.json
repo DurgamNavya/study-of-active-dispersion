@@ -1,0 +1,22 @@
+{
+  "actual_frames": 5001,
+  "actual_particle_rows": 2000400,
+  "boundary_corrections": 0,
+  "completed_steps": 10000,
+  "ended_at_utc": "2026-11-11T07:42:37.031858+00:00",
+  "errors": [],
+  "execution_status": "completed",
+  "expected_frames": 5001,
+  "expected_particle_rows": 2000400,
+  "finalization_errors": [],
+  "incomplete_run_information": null,
+  "inertial_refinements": null,
+  "inertial_step_diagnostics_complete": null,
+  "maximum_refinement_depth": null,
+  "non_finite_orientations_detected": false,
+  "non_finite_positions_detected": false,
+  "non_finite_velocities_detected": null,
+  "run_id": "overdamped_N400_T50",
+  "started_at_utc": "2026-11-11T07:39:03.145670+00:00",
+  "unresolved_boundary_crossing": false
+}
