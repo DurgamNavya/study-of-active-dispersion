@@ -8,7 +8,7 @@ from Segmentation_1 import VinegarEelSegmentation
 # PATHS
 # ============================================================
 
-BASE_DIR = Path(r"C:\Users\navya\Downloads\CP302work\02_Image_Processing")
+BASE_DIR = Path(__file__).resolve().parent
 
 IMAGE_FILE = next(BASE_DIR.glob("*.tiff"))
 
@@ -74,3 +74,4 @@ segmenter.save_preprocessing_steps(
 print("Intermediate processing images saved.")
 
 print("\nFinished!")
+

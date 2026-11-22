@@ -1,29 +1,29 @@
-# Study of Active Dispersion
+﻿# Study of Active Dispersion
 
 ## B.Tech Capstone Project
 
 - **Department:** Chemical Engineering
 - **Institute:** Indian Institute of Technology Ropar
 - **Project:** Study of Active Dispersion
+- **Supervisor:** Dr Vishwajeet Mehendia
 
 ## Project Overview
 
-This project investigates the motion and dispersion of microorganisms through microscopy image processing and computational active-particle modelling.
+This repository contains microscopy image-processing work and computational active-particle modelling carried out for the project.
 
-The computational work includes image preprocessing and segmentation, supporting experimental tracking data, and simulations of Brownian, active Brownian, and inertial active-particle systems.
+The implemented image-processing code performs preprocessing and preliminary segmentation of microscopy images. The modelling code implements overdamped and inertial active Brownian particle simulations and includes numerical analysis of simulation outputs.
 
-## Project Objectives
+## Repository Structure
 
-- Process microscopy images and identify the experimental region.
-- Detect and segment microorganism structures.
-- Develop methods for extracting object positions and trajectories.
-- Study velocity, orientation, and dispersion.
-- Implement and analyse active-particle models.
-- Compare simulation behaviour with theoretical predictions and, where validated data are available, experimental observations.
+| Folder | Contents |
+|---|---|
+| `Experimental_Data` | Supporting experimental files and a representative microscopy image |
+| `Image_Processing` | Image preprocessing and segmentation scripts, along with selected processing outputs |
+| `Modelling` | Active-particle simulation code, numerical methods, analysis scripts, tests, documentation, and selected results |
 
 ## Image Processing
 
-The implemented image-processing workflow includes:
+The image-processing workflow includes:
 
 1. Petri-dish region detection and masking.
 2. Background intensity removal.
@@ -34,50 +34,43 @@ The implemented image-processing workflow includes:
 7. Morphological processing.
 8. Generation of preliminary segmentation masks.
 
-The current segmentation workflow has been tested on representative microscopy images. Dense central regions can cause multiple structures to become connected, so reliable individual-object separation remains a limitation.
+The segmentation workflow has been tested on representative microscopy images. Dense central regions can cause multiple structures to become connected, limiting reliable separation of individual objects.
+
+The scripts expect TIFF input images in the image-processing directory. The complete raw microscopy sequence is not included in this repository.
 
 ## Computational Modelling
 
-The `06_Modelling` directory contains:
+The `Modelling` directory contains implementations and analyses of active-particle systems, including:
 
-- Overdamped and inertial active Brownian particle simulation code.
+- Overdamped and inertial active Brownian particle simulations.
 - Numerical methods and simulation utilities.
-- Parameter-sensitivity studies.
-- Mean-squared displacement and correlation analysis.
-- Theoretical comparisons and validation scripts.
-- Tests for the numerical core, simulation runner, and analysis pipeline.
+- Simulation parameter-sensitivity studies.
+- Mean-squared displacement analysis.
+- Time-averaged mean-squared displacement analysis.
+- Orientation and velocity autocorrelation analysis.
+- Comparisons with theoretical behaviour.
+- Numerical tests and selected simulation results.
 
-The modelling documentation describes the simulation assumptions, parameters, outputs, and limitations.
+The modelling documentation describes the implemented methods, simulation configurations, outputs, assumptions, and limitations.
 
-## Repository Structure
+## Experimental Data
 
-| Folder | Contents |
-|---|---|
-| `01_Experimental_Data` | Supporting tracking files and a representative image; full raw image sequence is stored separately |
-| `02_Image_Processing` | Preprocessing, segmentation scripts, and selected image outputs |
-| `03_Tracking` | Reserved for validated tracking workflows and outputs |
-| `04_Velocity_Orientation` | Reserved for velocity and orientation analysis |
-| `05_Dispersion_Analysis` | Reserved for experimental dispersion analysis |
-| `06_Modelling` | Active-particle simulations, numerical methods, analysis scripts, tests, and selected results |
-| `07_AMEP` | Reserved for project-specific AMEP analysis files |
-| `08_Report_PPT` | Reserved for finalized project reports and presentation material |
+The complete raw microscopy dataset is not included because of its size.
 
-## Experimental Data Availability
+The original dataset contains 1,266 TIFF images: one background image and 1,265 numbered experimental frames. Its approximate total size is 7.39 GB.
 
-The complete raw microscopy dataset is not included in this repository because of its size.
+The repository includes three supporting files and a representative PNG frame in `Experimental_Data/raw_data`.
 
-The original dataset contains 1,266 TIFF images, including one background image and 1,265 numbered experimental frames. Its approximate total size is 7.39 GB.
+The correspondence between the supporting files and the complete image sequence, as well as the spatial calibration and frame timing, has not been established sufficiently for quantitative experimental validation.
 
-Three smaller supporting files and a representative PNG frame are included in `01_Experimental_Data/raw_data`.
+## Data and Modelling Limitations
 
-The correspondence between supporting tracking files and the complete image sequence, along with spatial calibration and frame timing, must be established before using them for quantitative experimental validation.
-
-## Data and Results Limitations
-
-- Selected image outputs are provided to document the processing workflow.
-- Some large simulation trajectory files are excluded from the repository because of GitHub file-size limits.
-- Experimental tracking, velocity, and dispersion results should be treated as quantitative results only after the relevant calibration and data provenance have been verified.
-- Simulation assumptions and limitations are documented in `06_Modelling`.
+- The image-processing outputs document preprocessing and preliminary segmentation.
+- Dense image regions can cause multiple objects to merge in segmentation masks.
+- Large simulation trajectory files are not all included in the repository.
+- The documented seed-42 simulation analysis uses a single random seed and should not be interpreted as a multi-seed uncertainty analysis.
+- Simulation distances are expressed in model length units; physical length calibration is not provided.
+- Simulation assumptions and numerical limitations are described in the documentation under `Modelling`.
 
 ## Tools and Libraries
 
@@ -88,4 +81,3 @@ The correspondence between supporting tracking files and the complete image sequ
 - scikit-image
 - Matplotlib
 - pytest
-- Active Matter Environment Package (AMEP)

@@ -94,19 +94,19 @@ changed by the driver.
 From the project root, list IDs and destinations without creating them:
 
 ```powershell
-python 06_Modelling/run_abp_simulations.py --list
+python Modelling/run_abp_simulations.py --list
 ```
 
 Run one configuration explicitly:
 
 ```powershell
-python 06_Modelling/run_abp_simulations.py --run overdamped_N100_T50
+python Modelling/run_abp_simulations.py --run overdamped_N100_T50
 ```
 
 Running all six requires the explicit `--all` selection:
 
 ```powershell
-python 06_Modelling/run_abp_simulations.py --all
+python Modelling/run_abp_simulations.py --all
 ```
 
 The driver preflights every selected destination before running. Existing
@@ -117,7 +117,7 @@ reuse, or overwrite results.
 ## Output paths and schema
 
 Each run is written beneath
-`06_Modelling/abp_simulation_results/seed_42/`, with separate `N100_T50`,
+`Modelling/abp_simulation_results/seed_42/`, with separate `N100_T50`,
 `N400_T50`, or `N100_T200` and `overdamped`/`inertial` directories. The exact
 six paths are derived from the configuration IDs in the driver.
 
@@ -170,3 +170,4 @@ Two incomplete simulation attempts are also excluded from the repository:
 - The interrupted `N100_T200` run.
 
 The completed simulation outputs and their analysis products are documented in the corresponding result directories. Re-running simulations requires the appropriate Python dependencies and configuration described in this document.
+

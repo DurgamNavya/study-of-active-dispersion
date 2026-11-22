@@ -10,12 +10,12 @@ files and refuses to write if its output directory already exists.
 From the project root:
 
 ```powershell
-python 06_Modelling/analyze_abp_simulations.py
+python Modelling/analyze_abp_simulations.py
 ```
 
 Optional `--input-root` and `--output-root` arguments select different paths.
-The default input is `06_Modelling/abp_simulation_results/seed_42/`; the default
-output is the new directory `06_Modelling/abp_analysis_results/seed_42/`.
+The default input is `Modelling/abp_simulation_results/seed_42/`; the default
+output is the new directory `Modelling/abp_analysis_results/seed_42/`.
 If that output path already exists, the script exits without overwriting it.
 
 ## Inputs and validation
@@ -160,8 +160,9 @@ estimates. Multiple seeds are needed for defensible ensemble uncertainty.
 Run only the focused analysis tests with:
 
 ```powershell
-python -B -m pytest -p no:cacheprovider -q 06_Modelling/test_analyze_abp_simulations.py
+python -B -m pytest -p no:cacheprovider -q Modelling/test_analyze_abp_simulations.py
 ```
 
 The tests use synthetic trajectories and do not access or change the simulation outputs
 simulation outputs.
+
